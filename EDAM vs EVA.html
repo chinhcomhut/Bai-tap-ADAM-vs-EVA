@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDAM vs EVA</title>
+</head>
+<body>
+<script>
+    let Apple = function (weightapple) {
+        this.weightapple = weightapple;
+        this.setWeightApple = function () {
+           if (this.weightapple>0){
+               return true;
+           }else {
+               return false;
+           }
+        };
+        this.giamWeight = function () {
+            this.weightapple--;
+        };
+    }
+    let Human = function (name, gender, weighthuman) {
+        this.name = name;
+        this.gender = gender;
+        this.weighthuman = weighthuman;
+        this.getWeighHuman = function () {
+            return weighthuman;
+        };
+        this.Say = function (human) {
+            return "Tôi là: " + this.name + " :giới tính" + this.gender + "cân nặng" + this.weighthuman
+        };
+        this.checkApple = function (apple) {
+          return apple.setWeightApple();
+        };
+        this.eatApple = function (apple) {
+            apple.giamWeight();
+            this.weighthuman++;
+        };
+    }
+    let apple = new Apple(2);
+    let adam = new Human("Adam", 'Male', 20);
+    let eva = new Human("Eva", 'FetMale', 10);
+</script>
+</body>
+</html>
